@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: monthly_total_passengers
+    columns:
+          - name: month_name
+            tests:
+              - not_null
+          - name: tahun
+            tests:
+              - not_null
+          - name: store_and_fwd_flag_bool
+            tests:
+              - accepted_values:
+                  values: [True, False]
+                  quote: false
+          - name: total_amount
+            tests:
+              - not_null
+          - name: amount_idr
+            tests:
+              - not_null

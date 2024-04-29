@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: taxitrip
+    columns:
+          - name: VendorID
+            tests:
+              - accepted_values:
+                  values: [1, 2]
+                  quote: false
+          - name: lpep_pickup_datetime
+            tests:
+              - not_null
+          - name: lpep_dropoff_datetime
+            tests:
+              - not_null
+          - name: store_and_fwd_flag_bool
+            tests:
+              - accepted_values:
+                  values: [True, False]
+                  quote: false
+          - name: RatecodeID
+            tests:
+              - accepted_values:
+                  values: [1, 2, 3, 4, 5, 6]
+                  quote: false
+          - name: PULocationID
+            tests:
+              - not_null
+          - name: DOLocationID
+            tests:
+              - not_null
+          - name: passenger_count
+          - name: trip_distance
+            tests:
+              - not_null
+          - name: fare_amount
+            tests:
+              - not_null
+          - name: extra
+            tests:
+              - not_null
+          - name: mta_tax
+            tests:
+              - not_null
+          - name: tip_amount
+            tests:
+              - not_null
+          - name: tolls_amount
+            tests:
+              - not_null
+          - name: improvement_surcharge
+            tests:
+              - not_null
+          - name: total_amount
+            tests:
+              - not_null
+          - name: payment_type
+            tests:
+              - accepted_values:
+                  values: [1, 2, 3, 4, 5, 6]
+                  quote: false
+          - name: trip_type
+          - name: congestion_surcharge

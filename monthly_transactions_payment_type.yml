@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: monthly_transactions_payment_type
+    columns:
+          - name: month_name
+            tests:
+              - not_null
+          - name: tahun
+            tests:
+              - not_null
+          - name: store_and_fwd_flag_bool
+            tests:
+              - accepted_values:
+                  values: [True, False]
+                  quote: false
+          - name: payment_type
+            tests:
+              - accepted_values:
+                  values: ['Credit card', 'Cash', 'Dispute', 'Invalid code', 'No charge', 'Unknown']
+          - name: total_amount
+            tests:
+              - not_null
+          - name: amount_idr
+            tests:
+              - not_null
+          - name: jumlah_transaksi
+            tests:
+              - not_null
